@@ -1,14 +1,6 @@
 <?php
 
 
-namespace System;
-
-
-/**
- * @author UserAnonymous
- * @version 1.0
- * @created 15-Oct-2016 11:54:40 PM
- */
 class Information
 {
 
@@ -17,11 +9,18 @@ class Information
 
 	function __construct()
 	{
+		if(func_num_args() == 0)
+		{
+			$this->id= "";
+			$this->description="";
+		}
+      	if (func_num_args() == 2) {
+        	$args = func_get_args();
+        	$this->id=$args[0];
+			$this->description=$args[1];
+    	}
 	}
 
-	function __destruct()
-	{
-	}
 
 
 
@@ -30,10 +29,7 @@ class Information
 		return $this->id;
 	}
 
-	/**
-		 * 
-		 * @param newVal
-		 */
+	
 	public function set_id($newVal)
 	{
 		$this->id = $newVal;
@@ -44,10 +40,7 @@ class Information
 		return $this->description;
 	}
 
-	/**
-		 * 
-		 * @param newVal
-		 */
+	
 	public function set_description($newVal)
 	{
 		$this->description = $newVal;

@@ -1,16 +1,7 @@
 <?php
 require_once ('Ingredient.php');
 
-namespace System;
 
-
-
-use System;
-/**
- * @author UserAnonymous
- * @version 1.0
- * @created 15-Oct-2016 11:55:19 PM
- */
 class Dish
 {
 
@@ -22,23 +13,30 @@ class Dish
 
 	function __construct()
 	{
+		if(func_num_args() == 0)
+		{
+			$this->id="";
+			$this->name="";
+			$this->description="";
+			$this->price="";
+			$this->ingredients = array();
+		}
+      	if (func_num_args() == 5) {
+        	$args = func_get_args();
+        	$this->id=$args[0];
+			$this->name=$args[1];
+			$this->description=$args[2];
+			$this->price=$args[3];
+			$this->ingredients=$args[4];
+    	}
 	}
-
-	function __destruct()
-	{
-	}
-
-
 
 	public function get_name()
 	{
 		return $this->name;
 	}
 
-	/**
-	 *
-	 * @param newVal
-	 */
+	
 	public function set_name($newVal)
 	{
 		$this->name = $newVal;
@@ -49,10 +47,7 @@ class Dish
 		return $this->description;
 	}
 
-	/**
-	 *
-	 * @param newVal
-	 */
+	
 	public function set_description($newVal)
 	{
 		$this->description = $newVal;
@@ -63,10 +58,7 @@ class Dish
 		return $this->price;
 	}
 
-	/**
-	 *
-	 * @param newVal
-	 */
+	
 	public function set_price($newVal)
 	{
 		$this->price = $newVal;
@@ -77,10 +69,7 @@ class Dish
 		return $this->id;
 	}
 
-	/**
-	 *
-	 * @param newVal
-	 */
+	
 	public function set_id($newVal)
 	{
 		$this->id = $newVal;

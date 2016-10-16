@@ -3,36 +3,38 @@ require_once ('MovementConcept.php');
 require_once ('Warehouse.php');
 require_once ('Stock.php');
 
-namespace System;
 
-
-
-use System;
-use System;
-use System;
-/**
- * @author UserAnonymous
- * @version 1.0
- * @created 15-Oct-2016 11:55:20 PM
- */
 class Movement
 {
 
 	private $id;
 	private $date;
 	private $quantity;
-	public $m_MovementConcept;
-	public $m_Warehouse;
-	public $m_Stock;
+	private $movement_concept;
+	private $warehouse;
+	private $stock;
 
 	function __construct()
 	{
+		if(func_num_args() == 0)
+		{
+			$this->id="";
+			$this->date="";
+			$this->quantity="";
+			$this->movement_concept= new MovementConcept();
+			$this->warehouse=new Warehouse();
+			$this->stock=new Stock();
+		}
+      	if (func_num_args() == 6) {
+        	$args = func_get_args();
+        	$this->id=$args[0];
+			$this->date=$args[1];
+			$this->quantity=$args[2];
+			$this->movement_concept = $args[3];
+			$this->warehouse=$args[4];
+			$this->stock=$args[5];
+    	}
 	}
-
-	function __destruct()
-	{
-	}
-
 
 
 	public function get_quantity()
@@ -40,10 +42,6 @@ class Movement
 		return $this->quantity;
 	}
 
-	/**
-	 * 
-	 * @param newVal
-	 */
 	public function set_quantity($newVal)
 	{
 		$this->quantity = $newVal;
@@ -54,10 +52,6 @@ class Movement
 		return $this->date;
 	}
 
-	/**
-	 * 
-	 * @param newVal
-	 */
 	public function set_date($newVal)
 	{
 		$this->date = $newVal;
@@ -68,10 +62,6 @@ class Movement
 		return $this->id;
 	}
 
-	/**
-	 * 
-	 * @param newVal
-	 */
 	public function set_id($newVal)
 	{
 		$this->id = $newVal;

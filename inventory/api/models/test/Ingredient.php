@@ -2,31 +2,27 @@
 require_once ('Information.php');
 require_once ('Measurement.php');
 
-namespace System;
 
-
-
-use System;
-use System;
-/**
- * @author UserAnonymous
- * @version 1.0
- * @created 15-Oct-2016 11:55:20 PM
- */
 class Ingredient extends Information
 {
 
-	public $m_Measurement;
+	private $measurement;
 
 	function __construct()
 	{
+		parent::__construct();
+		if(func_num_args() == 0)
+		{
+			$this->measurement= new Measurement();
+		}
+      	if (func_num_args() == 3) {
+        	$args = func_get_args();
+        	$this->set_id($args[0]);
+			$this->set_description($args[1]);
+			$this->measurement= $args[2];
+    	}
 	}
 
-	function __destruct()
-	{
-	}
-
-
-
+	
 }
 ?>

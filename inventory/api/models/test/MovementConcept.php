@@ -1,28 +1,24 @@
 <?php
 require_once ('Information.php');
 
-namespace System;
 
-
-
-use System;
-/**
- * @author UserAnonymous
- * @version 1.0
- * @created 15-Oct-2016 11:55:20 PM
- */
 class MovementConcept extends Information
 {
 
+
 	function __construct()
 	{
+		parent::__construct();
+		if(func_num_args() == 0)
+		{
+			
+		}
+      	if (func_num_args() == 2) {
+        	$args = func_get_args();
+        	$this->set_id($args[0]);
+        	$this->set_description($args[1]);
+    	}
 	}
-
-	function __destruct()
-	{
-	}
-
-
 
 }
 ?>
