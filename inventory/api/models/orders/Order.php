@@ -34,7 +34,7 @@ class Order
     	}
 	}
 
-	
+
 	public function get_id()
 	{
 		return $this->id;
@@ -50,7 +50,7 @@ class Order
 		return $this->date;
 	}
 
-	
+
 	public function set_date($newVal)
 	{
 		$this->date = $newVal;
@@ -61,7 +61,7 @@ class Order
 		return $this->subtotal;
 	}
 
-	
+
 	public function set_subtotal($newVal)
 	{
 		$this->subtotal = $newVal;
@@ -72,7 +72,7 @@ class Order
 		return $this->tax_amount;
 	}
 
-	
+
 	public function set_tax_amount($newVal)
 	{
 		$this->tax_amount = $newVal;
@@ -83,7 +83,7 @@ class Order
 		return $this->total;
 	}
 
-	
+
 	public function set_total($newVal)
 	{
 		$this->total = $newVal;

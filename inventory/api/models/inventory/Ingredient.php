@@ -1,5 +1,5 @@
 <?php
-require_once ('Information.php');
+require_once ('models/general/Information.php');
 require_once ('Measurement.php');
 
 
@@ -23,6 +23,6 @@ class Ingredient extends Information
     	}
 	}
 
-	
+
 }
 ?>

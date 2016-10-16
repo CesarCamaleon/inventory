@@ -1,5 +1,5 @@
 <?php
-require_once ('Ingredient.php');
+require_once ('models/inventory/Ingredient.php');
 
 
 class Dish
@@ -36,7 +36,7 @@ class Dish
 		return $this->name;
 	}
 
-	
+
 	public function set_name($newVal)
 	{
 		$this->name = $newVal;
@@ -47,7 +47,7 @@ class Dish
 		return $this->description;
 	}
 
-	
+
 	public function set_description($newVal)
 	{
 		$this->description = $newVal;
@@ -58,7 +58,7 @@ class Dish
 		return $this->price;
 	}
 
-	
+
 	public function set_price($newVal)
 	{
 		$this->price = $newVal;
@@ -69,7 +69,7 @@ class Dish
 		return $this->id;
 	}
 
-	
+
 	public function set_id($newVal)
 	{
 		$this->id = $newVal;
