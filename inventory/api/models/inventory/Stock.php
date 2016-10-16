@@ -12,18 +12,19 @@ class Stock
 
 	function __construct()
 	{
-		if(func_num_args() == 0)
-		{
-			$this->quantity="";
-			$this->warehouse=new Warehouse();
-			$this->ingredient=new Ingredient();
+		switch(func_num_args()){
+			case 0:
+				$this->quantity=0;
+				$this->warehouse=new Warehouse();
+				$this->ingredient=new Ingredient();
+				break;
+			case 3:
+				$args = func_get_args();
+				$this->quantity=$args[0];
+				$this->warehouse=$args[1];
+				$this->ingredient=$args[2];
+				break;
 		}
-      	if (func_num_args() == 3) {
-        	$args = func_get_args();
-        	$this->quantity=$args[0];
-			$this->warehouse=$args[1];
-			$this->ingredient=$args[2];
-    	}
 	}
 
 
@@ -32,7 +33,7 @@ class Stock
 		return $this->quantity;
 	}
 
-	
+
 	public function set_quantity($newVal)
 	{
 		$this->quantity = $newVal;
