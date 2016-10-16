@@ -1,6 +1,8 @@
 alter table order_dishes
 add constraint PK_order_dishes primary key (dis_id, ord_id)
 
+
+ -- falta arreglar la informacion
 insert into orders values
 (1,GETDATE(),32, 32*0.16, 32*1.16),
 (2,GETDATE(),30, 30*0.16, 30*1.16),
