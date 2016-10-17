@@ -8,7 +8,7 @@ class Information
 	{
 		switch(func_num_args()){
 			case 0:
-				$this->id= 0;
+				$this->id= -1;
 				$this->description="";
 				break;
 			case 2:
